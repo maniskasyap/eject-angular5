@@ -2,9 +2,11 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs/Observable";
 
+import { environment } from "../environments/environment";
+
 @Injectable()
 export class DataService {
-  private url = "https://super-crud.herokuapp.com/pokemon";
+  private url = environment.baseUrl;
   constructor(private http: HttpClient) {}
 
   getData(): Observable<any> {
