@@ -1,2 +1,13 @@
 <h1>test app</h1>
-<div class="new-class">xxx</div>
+
+<div *ngIf="data">
+    <ngb-carousel>
+        <ng-template ngbSlide *ngFor="let each of data.pokemons">
+            <img [src]="each.image" alt="">
+            <div class="carousel-caption">
+                <h3>{{each.name}}</h3>
+                <p>Evolves from: {{each.evolves_from}}</p>
+            </div>
+        </ng-template>
+    </ngb-carousel>
+</div>
